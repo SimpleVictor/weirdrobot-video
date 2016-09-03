@@ -1,0 +1,40 @@
+<h1>Register Page</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text"
+                           class="form-control"
+                           id="email"
+                           name="email"
+                           [(ngModel)]="registerForm.email"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password"
+                           class="form-control"
+                           id="password"
+                           name="password"
+                           [(ngModel)]="registerForm.password"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="cpass">Confirm Password</label>
+                    <input type="password"
+                           class="form-control"
+                           id="cpass"
+                           name="cpass"
+                           [(ngModel)]="registerForm.cpass"
+                           required>
+                </div>
+                <p *ngIf="wrongPass" class="wrongPass">Password do not match!!!</p>
+                <button type="submit" class="btn btn-success btn-block">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
